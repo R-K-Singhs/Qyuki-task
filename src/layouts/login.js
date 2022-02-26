@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import { Box } from "@chakra-ui/react";
 import { Input } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
-import { Button, ButtonGroup } from "@chakra-ui/react";
-import { Stack, HStack, VStack } from "@chakra-ui/react";
+import { Button, } from "@chakra-ui/react";
+import { HStack, } from "@chakra-ui/react";
 import { PinInput, PinInputField } from "@chakra-ui/react";
 import { firebase, auth } from "../firebase";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
-  FormControl,
+
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
 } from "@chakra-ui/react";
 import {
   AlertDialog,
@@ -39,7 +37,7 @@ const Login = () => {
     if (mobile === "" || mobile.length < 10) return;
     let verify = new firebase.auth.RecaptchaVerifier("recaptcha-container");
     auth
-      .signInWithPhoneNumber(`+91${mobile}`, verify)
+      .signInWithPhoneNumber(`+91-${mobile}`, verify)
       .then((result) => {
         setfinal(result);
         setIsOpen(true);
