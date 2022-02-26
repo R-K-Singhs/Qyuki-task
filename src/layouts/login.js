@@ -84,7 +84,7 @@ const Login = () => {
           bg="white"
           w={"50%"}
           minW={360}
-          mt="20%"
+          m="3%"
           maxH={"500px"}
           maxWidth={"500px"}
           display={"flex"}
